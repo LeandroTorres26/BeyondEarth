@@ -1,0 +1,13 @@
+@mixin borda-transicao {
+    content: "";
+    width: 100%;
+    height: 15em;
+    position: absolute;
+    top: -10em;
+    z-index: -1;
+}
+
+@mixin filtro-imagem {
+    filter: grayscale(30%);
+    -webkit-filter: grayscale(30%);
+}

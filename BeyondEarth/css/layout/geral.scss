@@ -1,0 +1,50 @@
+body { /* Utilizei um grid layout para a estruturação do site e defini uma imagem como background fixado para que houvesse um leve efeito de paralax ao rolar a pagina para baixo*/
+    background: url(../img/galaxy6.jpg);
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "main main main"
+        "footer footer footer";
+    overflow-x: hidden;
+}
+
+body:before { /* Este pseudo-elemento cria um efeito que faz com que a imagem de destaque fique dando zoom lentamente */
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0) scale(1.0, 1.0);
+    transform: translateZ(0);
+    background: #fff url(../img/galaxy6.jpg) top center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    animation: grow 60s linear 10ms infinite;
+    transition: all 0.2s ease-in-out;
+    z-index: -2
+}
+
+@keyframes grow { /* Animação responsável pelo zoom citado acima */
+    0% {
+        transform: scale(1)
+    }
+
+    50% {
+        transform: scale(1.2)
+    }
+}
+
+.container { /* Container padrão para os componentes do site */
+    width: auto;
+    margin: 0 auto;
+}
+
+.main { /* definição da grid-area do main */
+    grid-area: main;
+}

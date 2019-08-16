@@ -1,0 +1,489 @@
+@charset "UTF-8";
+body {
+  /* Utilizei um grid layout para a estrutura├º├úo do site e defini uma imagem como background fixado para que houvesse um leve efeito de paralax ao rolar a pagina para baixo*/
+  background: url(../img/galaxy6.jpg);
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: grid;
+  grid-template-areas: "header header header" "main main main" "footer footer footer";
+  overflow-x: hidden; }
+
+body:before {
+  /* Este pseudo-elemento cria um efeito que faz com que a imagem de destaque fique dando zoom lentamente */
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0) scale(1, 1);
+  transform: translateZ(0);
+  background: #fff url(../img/galaxy6.jpg) top center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  animation: grow 60s linear 10ms infinite;
+  transition: all 0.2s ease-in-out;
+  z-index: -2; }
+
+@keyframes grow {
+  /* Anima├º├úo respons├ível pelo zoom citado acima */
+  0% {
+    transform: scale(1); }
+  50% {
+    transform: scale(1.2); } }
+.container {
+  /* Container padr├úo para os componentes do site */
+  width: auto;
+  margin: 0 auto; }
+
+.main {
+  /* defini├º├úo da grid-area do main */
+  grid-area: main; }
+
+.header {
+  /* Header do site*/
+  grid-area: header;
+  background: linear-gradient(135deg, #0A0C1C 1%, #203954);
+  height: 3em;
+  position: fixed;
+  width: 80%;
+  margin-left: 12em;
+  margin-right: auto;
+  border-bottom-left-radius: 10em;
+  border-bottom-right-radius: 10em;
+  z-index: 100; }
+  @media (max-width: 980px) {
+    .header {
+      width: 100vw;
+      margin: 0;
+      border-radius: 0; } }
+
+nav {
+  /* Barra de navega├º├úo do site*/
+  display: flex;
+  height: 3em;
+  align-items: center;
+  justify-content: flex-start; }
+
+.nav-logo {
+  /* Logo da barra de navega├º├úo*/
+  width: 50px;
+  margin-left: 5em;
+  cursor: pointer; }
+  @media (max-width: 980px) {
+    .nav-logo {
+      margin-left: auto;
+      margin-right: auto; } }
+
+.menu {
+  /* Menu de navega├º├úo*/
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  width: 20em;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.4em;
+  margin-left: auto;
+  margin-right: 5em;
+  user-select: none;
+  cursor: pointer; }
+  @media (max-width: 980px) {
+    .menu {
+      display: none; } }
+  .menu li {
+    /* Itens do menu*/
+    position: relative; }
+    .menu li:hover {
+      color: #e4e4e4; }
+
+.destaque {
+  /* Destaque com a frase no topo site*/
+  color: #fff;
+  height: 30em;
+  padding-top: 20em;
+  font-style: italic;
+  font-family: 'Montserrat', sans-serif; }
+  @media (max-width: 980px) {
+    .destaque {
+      height: 25em;
+      padding-top: 15em; } }
+
+.frase {
+  /* Frase do pensador em destaque*/
+  width: auto;
+  font-size: 3vw;
+  font-weight: normal;
+  margin: 0;
+  margin-left: 1.5em;
+  text-transform: uppercase; }
+  @media (max-width: 980px) {
+    .frase {
+      margin-left: 0em;
+      margin-right: 1em;
+      font-size: 6vw;
+      text-align: center;
+      height: auto; } }
+
+.pensador {
+  /* Nome do pensador em destaque*/
+  width: auto;
+  font-size: 1.5vw;
+  margin: 0;
+  margin-right: auto;
+  margin-left: 40em; }
+  @media (max-width: 980px) {
+    .pensador {
+      margin-left: 1em;
+      margin-right: 5em;
+      font-size: 3vw;
+      text-align: right; } }
+
+.sobre {
+  /* Sessao com informacoes sobre o universo */
+  background: linear-gradient(135deg, #0A0C1C, #203954, #0A0C1C) center bottom no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  color: #fff;
+  height: 60em;
+  padding-top: 10em;
+  padding-bottom: 10em;
+  font-style: italic;
+  font-family: "Roboto Slab", sans-serif;
+  border-radius: 5em;
+  width: 99%; }
+  @media (max-width: 980px) {
+    .sobre {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      padding-top: 5em;
+      padding-bottom: 0;
+      height: auto;
+      width: 100%; } }
+  .sobre:before {
+    /* Pseudo-Elemento que cria uma sombra antes da sessao*/
+    content: "";
+    width: 100%;
+    height: 40%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, black 100%); }
+
+.txt-img-sobre {
+  /* Div contendo um texto e uma imagem sobre um assunto*/
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  border-color: red;
+  text-align: justify; }
+  @media (max-width: 980px) {
+    .txt-img-sobre {
+      flex-direction: column;
+      align-content: center;
+      justify-content: center;
+      border-top: solid #fff .5em;
+      padding-top: 5em;
+      padding-bottom: 3em; } }
+  .txt-img-sobre h2 {
+    margin: auto;
+    margin-bottom: 1em;
+    display: none; }
+    @media (max-width: 980px) {
+      .txt-img-sobre h2 {
+        display: inherit; } }
+  .txt-img-sobre p {
+    /* Texto sobre o assunto*/
+    word-break: keep-all;
+    width: 90%;
+    padding-left: 2em;
+    padding-right: 2em; }
+    @media (max-width: 980px) {
+      .txt-img-sobre p {
+        width: 85%;
+        word-break: keep-all; } }
+
+.img-bigbang {
+  /* Imagem a esquerda do Big Bang*/
+  background-image: url(../img/bigbang.png);
+  background-size: cover;
+  background-position: center center;
+  filter: grayscale(30%);
+  -webkit-filter: grayscale(30%);
+  height: 20em;
+  border-top-right-radius: 2em;
+  /*    border-bottom-right-radius: 2em;*/
+  flex: 1;
+  color: transparent; }
+  @media (max-width: 980px) {
+    .img-bigbang {
+      border-radius: 0;
+      flex: none;
+      height: 10em; } }
+
+.txt-bigbang {
+  /* Texto a direita do Big Bang*/
+  flex: 1;
+  /*    margin: 0 2em 0 2em;*/
+  align-self: center;
+  line-height: 3; }
+
+.img-galaxia {
+  /* Imagem a direita da Via L├íctea*/
+  background-image: url(../img/milky-way.jpg);
+  background-size: cover;
+  background-position: center center;
+  filter: grayscale(30%);
+  -webkit-filter: grayscale(30%);
+  height: 20em;
+  /*    border-top-left-radius: 2em;*/
+  /*    border-bottom-left-radius: 2em;*/
+  flex: 1;
+  order: 2;
+  color: transparent; }
+  @media (max-width: 980px) {
+    .img-galaxia {
+      order: 1;
+      flex: none;
+      height: 10em; } }
+
+.txt-galaxia {
+  /* Texto a esquerda da Via L├íctea*/
+  flex: 1;
+  /*    margin: 0 2em 0 2em;*/
+  align-self: center;
+  line-height: 3; }
+  @media (max-width: 980px) {
+    .txt-galaxia {
+      order: 2; } }
+
+.img-sistema-solar {
+  /* Imagem ├á esquerda do Sistema Solar*/
+  background-image: url(../img/sistema-solar.jpg);
+  background-size: cover;
+  background-position: center center;
+  filter: grayscale(30%);
+  -webkit-filter: grayscale(30%);
+  height: 20em;
+  /*    border-top-right-radius: 2em;*/
+  border-bottom-right-radius: 2em;
+  flex: 1;
+  color: transparent; }
+  @media (max-width: 980px) {
+    .img-sistema-solar {
+      height: 10em;
+      flex: none; } }
+
+.txt-sistema-solar {
+  /* Texto ├á direita do sistema solar*/
+  flex: 1;
+  /*    margin: 0 2em 0 2em;*/
+  align-self: center;
+  line-height: 3; }
+
+.sistema-solar {
+  /* Sess├úo com os planetas do Sistema Solar*/
+  background: url(../img/star2.png) center bottom no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  color: #fff;
+  height: auto;
+  padding-top: 10em;
+  padding-bottom: 10em;
+  font-style: italic;
+  font-family: "Roboto Slab", sans-serif;
+  position: relative;
+  border-bottom-left-radius: 10em;
+  border-bottom-right-radius: 10em;
+  border-bottom: 5px solid #fff;
+  width: 100vw; }
+  @media (max-width: 980px) {
+    .sistema-solar {
+      padding-top: 0;
+      padding-bottom: 5em; } }
+  .sistema-solar:before {
+    /* Pseudo-Elemento que separa esta sess├úo da pr├│xima*/
+    content: "";
+    width: 100%;
+    height: 15em;
+    position: absolute;
+    top: -10em;
+    z-index: -1;
+    background: url(../img/star2.png); }
+
+.planeta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center; }
+  @media (max-width: 980px) {
+    .planeta {
+      flex-direction: column; } }
+
+.img-planeta {
+  /* Imagem do planeta*/
+  flex-basis: 45em;
+  height: 45em;
+  align-self: flex-start; }
+  @media (max-width: 980px) {
+    .img-planeta {
+      flex-basis: 20em;
+      height: 20em; } }
+
+.info-planeta {
+  /* Div com nome e texto sobre o planeta*/
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  height: auto; }
+
+.nome-planeta {
+  /* Nome do planeta*/
+  width: auto;
+  font-size: 4em;
+  position: relative;
+  margin: 0 auto;
+  line-height: 3; }
+  @media (max-width: 980px) {
+    .nome-planeta {
+      padding-left: 0;
+      line-height: 1; } }
+
+.texto-planeta {
+  /* Texto sobre o planeta*/
+  width: 50em;
+  font-family: 'Roboto Slab', serif;
+  font-size: 1em;
+  line-height: 2;
+  text-align: justify; }
+  @media (max-width: 980px) {
+    .texto-planeta {
+      width: 20em; } }
+
+/*____________________Configura├º├Áes do Slick Carousel____________________*/
+.slider > div {
+  /* Div dentro do container do carousel*/
+  width: 80vw;
+  margin: auto;
+  column-count: auto;
+  align-items: center; }
+
+.slick-prev:before,
+.slick-next:before {
+  /* Configura├º├úo da seta de anterior e pr├│ximo do carousel*/
+  color: #fff;
+  font-size: 30px; }
+
+.slick-prev {
+  /* Configura├º├úo da seta de anterior do carousel*/
+  margin-left: 40px;
+  z-index: 1; }
+  @media (max-width: 980px) {
+    .slick-prev {
+      margin-left: 35px; } }
+
+.slick-next {
+  /* Configura├º├úo da seta de pr├│ximo do carousel*/
+  margin-right: 90px;
+  z-index: 1; }
+  @media (max-width: 980px) {
+    .slick-next {
+      margin-right: 45px; } }
+
+.footer {
+  /* Sess├úo do Footer*/
+  background: #090a0f;
+  grid-area: footer;
+  height: auto;
+  position: relative;
+  width: 100vw; }
+  .footer:before {
+    /* Pseudo-Elemento que separa esta sess├úo da anterior*/
+    content: "";
+    width: 100%;
+    height: 15em;
+    position: absolute;
+    top: -10em;
+    z-index: -1;
+    background: #090a0f; }
+
+.infos-dev {
+  /* Div que cont├®m a coluna de "Sobre mim" e a coluna das redes sociais*/
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-left: auto;
+  margin-right: 15em;
+  width: 80%;
+  margin-top: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  color: #fff;
+  font-family: 'Roboto Slab', sans-serif; }
+  @media (max-width: 980px) {
+    .infos-dev {
+      flex-direction: column;
+      justify-content: center;
+      align-content: center; } }
+  .infos-dev:after {
+    /* Pseudo-Elemento que cria a linha de separa├º├úo abaixo da div*/
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    width: 80vw;
+    height: 1px;
+    top: 12em; }
+    @media (max-width: 980px) {
+      .infos-dev:after {
+        top: 15em;
+        width: 80vw; } }
+
+.sobre-mim {
+  /* Div contendo um breve resumo sobre mim*/
+  position: relative;
+  width: 35em; }
+  @media (max-width: 980px) {
+    .sobre-mim {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: auto; } }
+
+.sobre-mim h2 {
+  align-self: center; }
+
+.sobre-mim p {
+  /* Resumo sobre mim*/
+  text-align: justify;
+  font-family: "Roboto Slab", sans-serif;
+  font-weight: normal; }
+  @media (max-width: 980px) {
+    .sobre-mim p {
+      width: 80vw; } }
+
+.redes-sociais {
+  align-self: center; }
+
+.rede-social img {
+  /* Icones das redes sociais*/
+  margin-top: 1em;
+  width: 4em; }
+
+.copyright {
+  /* Copyright*/
+  color: #fff;
+  width: auto;
+  margin: 1em auto 1em 20em; }
+  @media (max-width: 980px) {
+    .copyright {
+      width: auto;
+      margin-left: 1em;
+      margin-top: 2em; } }
+
+/*# sourceMappingURL=main.css.map */

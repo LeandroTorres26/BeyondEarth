@@ -1,0 +1,101 @@
+.footer {
+    /* Sessão do Footer*/
+    background: #090a0f;
+    grid-area: footer;
+    height: auto;
+    position: relative;
+    width: 100vw;
+
+    &:before {
+        /* Pseudo-Elemento que separa esta sessão da anterior*/
+        @include borda-transicao;
+        background: #090a0f;
+    }
+}
+
+.infos-dev {
+    /* Div que contém a coluna de "Sobre mim" e a coluna das redes sociais*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-left: auto;
+    margin-right: 15em;
+    width: 80%;
+    margin-top: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    color: $cor-fonte;
+    font-family: 'Roboto Slab', sans-serif;
+
+    @media #{$mq-mobile} {
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    }
+
+    &:after {
+        /* Pseudo-Elemento que cria a linha de separação abaixo da div*/
+        content: "";
+        position: absolute;
+        background-color: #fff;
+        width: 80vw;
+        height: 1px;
+        top: 12em;
+
+        @media #{$mq-mobile} {
+            top: 15em;
+            width: 80vw;
+        }
+    }
+}
+
+.sobre-mim {
+    /* Div contendo um breve resumo sobre mim*/
+    position: relative;
+    width: 35em;
+
+    @media #{$mq-mobile} {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: auto;
+    }
+}
+
+.sobre-mim h2 {
+    align-self: center;
+}
+
+.sobre-mim p {
+    /* Resumo sobre mim*/
+    text-align: justify;
+    font-family: $fonte-texto;
+    font-weight: normal;
+
+    @media #{$mq-mobile} {
+        width: 80vw;
+    }
+}
+
+.redes-sociais {
+    align-self: center;
+}
+
+.rede-social img {
+    /* Icones das redes sociais*/
+    margin-top: 1em;
+    width: 4em;
+}
+
+.copyright {
+    /* Copyright*/
+    color: $cor-fonte;
+    width: auto;
+    margin: 1em auto 1em 20em;
+    
+    @media #{$mq-mobile} {
+        width: auto;
+        margin-left: 1em;
+        margin-top: 2em;
+    }
+}

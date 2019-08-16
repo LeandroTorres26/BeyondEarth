@@ -1,0 +1,44 @@
+.destaque { /* Destaque com a frase no topo site*/
+    color: $cor-fonte;
+    height: 30em;
+    padding-top: 20em;
+    font-style: italic;
+    font-family: 'Montserrat', sans-serif;
+    
+    @media #{$mq-mobile} {
+        height: 25em;
+        padding-top: 15em;
+    }
+}
+
+.frase { /* Frase do pensador em destaque*/
+    width: auto;
+    font-size: 3vw;
+    font-weight: normal;
+    margin: 0;
+    margin-left: 1.5em;
+    text-transform: uppercase;
+    
+    @media #{$mq-mobile} {
+        margin-left: 0em;
+        margin-right: 1em;
+        font-size: 6vw;
+        text-align: center;
+        height: auto;
+    }
+}
+
+.pensador { /* Nome do pensador em destaque*/
+    width: auto;
+    font-size: 1.5vw;
+    margin: 0;
+    margin-right: auto;
+    margin-left: 40em;
+    
+    @media #{$mq-mobile} {
+        margin-left: 1em;
+        margin-right: 5em;
+        font-size: 3vw;
+        text-align: right;
+    }
+}

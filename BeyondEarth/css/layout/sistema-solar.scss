@@ -1,0 +1,125 @@
+.sistema-solar {
+    /* Sessão com os planetas do Sistema Solar*/
+    background: url(../img/star2.png) center bottom no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    color: $cor-fonte;
+    height: auto;
+    padding-top: 10em;
+    padding-bottom: 10em;
+    font-style: italic;
+    font-family: $fonte-texto;
+    position: relative;
+    border-bottom-left-radius: 10em;
+    border-bottom-right-radius: 10em;
+    border-bottom: 5px solid #fff;
+    width: 100vw;
+    
+    @media #{$mq-mobile} {
+        padding-top: 0;
+        padding-bottom: 5em;
+    }
+
+    &:before {
+        /* Pseudo-Elemento que separa esta sessão da próxima*/
+        @include borda-transicao;
+        background: url(../img/star2.png);
+    }
+}
+
+.planeta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+
+    @media #{$mq-mobile} {
+        flex-direction: column;
+    }
+}
+
+.img-planeta {
+    /* Imagem do planeta*/
+    flex-basis: 45em;
+    height: 45em;
+    align-self: flex-start;
+
+    @media #{$mq-mobile} {
+        flex-basis: 20em;
+        height: 20em;
+    }
+}
+
+.info-planeta {
+    /* Div com nome e texto sobre o planeta*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    height: auto;
+}
+
+.nome-planeta {
+    /* Nome do planeta*/
+    width: auto;
+    font-size: 4em;
+    position: relative;
+    margin: 0 auto;
+    line-height: 3;
+
+    @media #{$mq-mobile} {
+        padding-left: 0;
+        line-height: 1;
+    }
+}
+
+.texto-planeta {
+    /* Texto sobre o planeta*/
+    width: 50em;
+    font-family: 'Roboto Slab', serif;
+    font-size: 1em;
+    line-height: 2;
+    text-align: justify;
+
+    @media #{$mq-mobile} {
+        width: 20em;
+    }
+}
+
+/*____________________Configurações do Slick Carousel____________________*/
+
+.slider > div {
+    /* Div dentro do container do carousel*/
+    width: 80vw;
+    margin: auto;
+    column-count: auto;
+    align-items: center;
+}
+
+.slick-prev:before,
+.slick-next:before {
+    /* Configuração da seta de anterior e próximo do carousel*/
+    color: $cor-fonte;
+    font-size: 30px;
+}
+
+.slick-prev {
+    /* Configuração da seta de anterior do carousel*/
+    margin-left: 40px;
+    z-index: 1;
+
+    @media #{$mq-mobile} {
+        margin-left: 35px;
+    }
+}
+
+.slick-next {
+    /* Configuração da seta de próximo do carousel*/
+    margin-right: 90px;
+    z-index: 1;
+
+    @media #{$mq-mobile} {
+        margin-right: 45px;
+    }
+}

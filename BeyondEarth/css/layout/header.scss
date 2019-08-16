@@ -1,0 +1,68 @@
+.header {
+    /* Header do site*/
+    grid-area: header;
+    background: linear-gradient(135deg, #0A0C1C 1%, #203954);
+    height: 3em;
+    position: fixed;
+    width: 80%;
+    margin-left: 12em;
+    margin-right: auto;
+    border-bottom-left-radius: 10em;
+    border-bottom-right-radius: 10em;
+    z-index: 100;
+
+    @media #{$mq-mobile} {
+        width: 100vw;
+        margin: 0;
+        border-radius: 0;
+    }
+}
+
+nav {
+    /* Barra de navegação do site*/
+    display: flex;
+    height: 3em;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.nav-logo {
+    /* Logo da barra de navegação*/
+    width: 50px;
+    margin-left: 5em;
+    cursor: pointer;
+
+    @media #{$mq-mobile} {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.menu {
+    /* Menu de navegação*/
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    width: 20em;
+    color: $cor-fonte;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.4em;
+    margin-left: auto;
+    margin-right: 5em;
+    user-select: none;
+    cursor: pointer;
+
+    @media #{$mq-mobile} {
+        display: none;
+    }
+
+    li {
+        /* Itens do menu*/
+        position: relative;
+
+        &:hover {
+            color: #e4e4e4;
+        }
+    }
+
+}
